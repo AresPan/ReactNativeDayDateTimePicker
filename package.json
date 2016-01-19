@@ -1,0 +1,17 @@
+{
+  "author": {
+    "name": "Joe Leonard"
+  },
+  "dependencies": {},
+  "description": "Native day, date and time picker for Android",
+  "devDependencies": {},
+  "directories": {},
+  "license": "MIT",
+  "main": "src/DayDateTimePickerAndroid.js",
+  "name": "react-native-day-date-time-pickers",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "react-native": ">=0.15.0"
+  },
+  "version": "0.0.1"
+}
