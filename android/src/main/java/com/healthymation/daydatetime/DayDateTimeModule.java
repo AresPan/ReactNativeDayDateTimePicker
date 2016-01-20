@@ -11,14 +11,13 @@ import com.facebook.react.bridge.ReadableMap;
 import java.util.Map;
 import java.util.HashMap;
 
-import android.support.v4.app.DialogFragment;
+import android.app.DialogFragment;
 import android.app.Activity;
-import android.support.v4.app.FragmentActivity;
 
 public class DayDateTimeModule extends ReactContextBaseJavaModule {
-  private FragmentActivity mActivity = null;
+  private Activity mActivity = null;
 
-  public DayDateTimeModule(ReactApplicationContext reactContext, FragmentActivity activity) {
+  public DayDateTimeModule(ReactApplicationContext reactContext, Activity activity) {
     super(reactContext);
     mActivity = activity;
   }
@@ -31,18 +30,18 @@ public class DayDateTimeModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void showDayPicker(ReadableMap props, Callback callback) {
     DialogFragment dayDialog = new DayPicker(props, callback);
-    dayDialog.show(mActivity.getSupportFragmentManager(), "dayPicker");
+    dayDialog.show(mActivity.getFragmentManager(), "dayPicker");
   }
 
   @ReactMethod
   public void showDatePicker(ReadableMap props, Callback callback) {
     DialogFragment dateDialog = new DatePicker(props, callback);
-    dateDialog.show(mActivity.getSupportFragmentManager(), "datePicker");
+    dateDialog.show(mActivity.getFragmentManager(), "datePicker");
   }
 
   @ReactMethod
   public void showTimePicker(ReadableMap props, Callback callback) {
     DialogFragment dateDialog = new TimePicker(props, callback);
-    dateDialog.show(mActivity.getSupportFragmentManager(), "timePicker");
+    dateDialog.show(mActivity.getFragmentManager(), "timePicker");
   }
 }

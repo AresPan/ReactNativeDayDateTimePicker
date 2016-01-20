@@ -1,32 +1,29 @@
 ### Android
 1. Add the following to `android/settings.gradle`:
   ```gradle
+
   include ':DayDateTimePickerAndroid', ':app'
   project(':DayDateTimePickerAndroid').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-day-date-time-pickers/android')
   ```
 1. Add this dependency to `android/app/build.gradle`
   ```gradle
+
   dependencies {
       ...
       compile project(':DayDateTimePickerAndroid')
   }
-
   ```
-1. Import `com.healthymation.daydatetime.DayDateTimePackage` and
-`android.support.v4.app.FragmentActivity` in your `MainActivity`:
+1. Register `DayDateTimePackage` in your `MainActivity`:
   ```java
-  import com.healthymation.daydatetime.DayDateTimePackage;
-  import android.support.v4.app.FragmentActivity;
-  ```
-1. Register `DayDateTimePackage` to the `ReactInstanceManager` in your `MainActivity`:
-  ```java
-  mReactInstanceManager = ReactInstanceManager.builder()
-      .setApplication(getApplication())
-      ...
-      .addPackage(new DayDateTimePackage(this))
-      ...
-      .build();
-
+  
+  protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+        new MainReactPackage(),
+        ...
+        new DayDateTimePackage(this)
+        ...
+        );
+      }
   ```
 
 ### Javascript

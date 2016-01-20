@@ -13,12 +13,11 @@ import java.util.ArrayList;
 
 import android.util.Log;
 import android.app.Activity;
-import android.support.v4.app.FragmentActivity;
 
 public class DayDateTimePackage implements ReactPackage {
-    private FragmentActivity mActivity = null;
+    private Activity mActivity = null;
 
-    public DayDateTimePackage(FragmentActivity activity) {
+    public DayDateTimePackage(Activity activity) {
         mActivity = activity;
     }
 
